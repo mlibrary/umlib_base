@@ -16,6 +16,9 @@ cd themes
 git submodule add https://github.com/mlibrary/umlib_base.git
 ```
 
+//TODO - get relevant parts and document
+For relevant submodule commands see https://opensource.com/article/20/5/git-submodules-subtrees
+
 
 You can then add a custom theme for your project based on this theme using the *base theme:* in your themes *info.yml* file. For example:
 

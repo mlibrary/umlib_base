@@ -22,9 +22,9 @@ and add the following below your drupal line in repositories
 +                "name": "mlibrary/umlib_base",
 +                "version": "1.0",
 +                "type": "drupal-theme",
-+                "source": {
-+                    "type": "git",
-+                    "url": "https://github.com/mlibrary/umlib_base.git",
++                "dist": {
++                    "type": "zip",
++                    "url": "https://github.com/mlibrary/umlib_base/archive/refs/heads/main.zip",
 +                    "reference": "main"
 +                }
 +            }

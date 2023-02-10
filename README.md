@@ -75,5 +75,12 @@ regions:
   ```
 
 All um_base styles will then be inherited to your project.
-
 For an example visit https://github.com/mlibrary/blogs.lib/tree/main/themes
+
+
+To get the lastest version in an existing project, you unfortunately cannot simply run composer update. Instead run
+
+```
+composer clear-cache
+composer reinstall mlibrary/umlib_base
+```

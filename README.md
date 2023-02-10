@@ -2,23 +2,58 @@
 
 ## This is the base drupal theme for um library sites. ##
 
-**Please add this theme to your drupal full stack project as a submodule in your *themes* directory using:**
+**Please add this theme to your drupal full stack project using composer:**
 
 ```
-cd themes
-git submodule add git@github.com:mlibrary/umlib_base.git
+vi composer.json
 ```
 
-or
+and add the following below your drupal line in repositories
 
 ```
-cd themes
-git submodule add https://github.com/mlibrary/umlib_base.git
+    "repositories": {
+        "drupal": {
+            "type": "composer",
+            "url": "https://packages.drupal.org/8"
+        },
++        "umlib_base-theme": {
++            "type": "package",
++            "package": {
++                "name": "mlibrary/umlib_base",
++                "version": "1.0",
++                "type": "drupal-theme",
++                "source": {
++                    "type": "git",
++                    "url": "https://github.com/mlibrary/umlib_base.git",
++                    "reference": "main"
++                }
++            }
++        },
 ```
 
-//TODO - get relevant parts and document
-For relevant submodule commands see https://opensource.com/article/20/5/git-submodules-subtrees
+You may also wish to alter what directory the theme is installed in
 
+```
+    "extra": {
+        "enable-patching": true,
+        "patchLevel": {
+            "drupal/core": "-p2"
+        },
+        "installer-paths": {
+            "core": [
+                "type:drupal-core"
+            ],
+            "libraries/{$name}": [
+                "type:drupal-library"
+            ],
+            "modules/contrib/{$name}": [
+                "type:drupal-module"
+            ],
+-            "themes/contrib/{$name}": [
++            "themes/{$name}": [
+                 "type:drupal-theme"
+             ],
+```
 
 You can then add a custom theme for your project based on this theme using the *base theme:* in your themes *info.yml* file. For example:
 

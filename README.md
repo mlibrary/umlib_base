@@ -4,6 +4,8 @@
 
 **Please add this theme to your drupal full stack project using composer:**
 
+### Setup
+
 ```
 vi composer.json
 ```
@@ -55,6 +57,25 @@ You may also wish to alter what directory the theme is installed in
              ],
 ```
 
+### Install
+
+You can now run the following to get the latest version of the umlib_base theme
+
+```
+composer require mlibrary/umlib_base
+```
+
+### Update
+
+To get the lastest version in an existing project, you unfortunately cannot simply run composer update. Instead run
+
+```
+composer clear-cache
+composer reinstall mlibrary/umlib_base
+```
+
+### Customize
+
 You can then add a custom theme for your project based on this theme using the *base theme:* in your themes *info.yml* file. For example:
 
 ```
@@ -77,10 +98,3 @@ regions:
 All um_base styles will then be inherited to your project.
 For an example visit https://github.com/mlibrary/blogs.lib/tree/main/themes
 
-
-To get the lastest version in an existing project, you unfortunately cannot simply run composer update. Instead run
-
-```
-composer clear-cache
-composer reinstall mlibrary/umlib_base
-```

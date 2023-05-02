@@ -18,19 +18,19 @@ and add the following below your drupal line in repositories
             "type": "composer",
             "url": "https://packages.drupal.org/8"
         },
-+        "umlib_base-theme": {
-+            "type": "package",
-+            "package": {
-+                "name": "mlibrary/umlib_base",
-+                "version": "1.0",
-+                "type": "drupal-theme",
-+                "dist": {
-+                    "type": "zip",
-+                    "url": "https://github.com/mlibrary/umlib_base/archive/refs/heads/main.zip",
-+                    "reference": "main"
-+                }
-+            }
-+        },
+        "umlib_base-theme": {
+            "type": "package",
+            "package": {
+                "name": "mlibrary/umlib_base",
+                "version": "1.0",
+                "type": "drupal-theme",
+                "dist": {
+                    "type": "zip",
+                    "url": "https://github.com/mlibrary/umlib_base/archive/refs/heads/main.zip",
+                    "reference": "main"
+               }
+            }
+        },
 ```
 
 You may also wish to alter what directory the theme is installed in
@@ -51,10 +51,11 @@ You may also wish to alter what directory the theme is installed in
             "modules/contrib/{$name}": [
                 "type:drupal-module"
             ],
--            "themes/contrib/{$name}": [
-+            "themes/{$name}": [
+            "themes/contrib/{$name}": [
+            "themes/{$name}": [
                  "type:drupal-theme"
              ],
+        }
 ```
 
 ### Install

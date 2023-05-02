@@ -44,21 +44,23 @@
  */
 #}
 <div class="layout-container">
-
-  <header role="banner">
-    {{ page.header }}
+  <m-universal-header></m-universal-header>
+  <header class="website-header">
+    <div class="viewport-container">
+      <div class="website-header_inner-container">
+      {{ page.header }}
+      {{ page.banner }}
+      {{ page.primary_menu }}
+      {{ page.secondary_menu }}
+      </div>
+    </div>
   </header>
 
-  {{ page.primary_menu }}
-  {{ page.secondary_menu }}
-
   {{ page.breadcrumb }}
-
   {{ page.highlighted }}
-
   {{ page.help }}
 
-  <main role="main">
+  <main class="viewport-container">
     <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
 
     <div class="layout-content">
@@ -79,10 +81,19 @@
 
   </main>
 
-  {% if page.footer %}
-    <footer role="contentinfo">
-      {{ page.footer }}
-    </footer>
-  {% endif %}
+  <footer class="footer">
+    <div class="viewport-container">
+      <div class="footer__content">
+        <div class="first-column">
+        {{ page.footer_first }}
+      </div>
+        {{ page.footer_second }}
+      </div>
+    </div>
+    <div class="footer__disclaimer">
+      <div class="viewport-container">
+        {{ page.footer_third }}
+    </div>
+  </footer>
 
 </div>{# /.layout-container #}
